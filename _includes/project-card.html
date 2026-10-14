@@ -1,0 +1,12 @@
+{% assign project = include.project %}
+<article class="world-project-card">
+  <p class="world-eyebrow">PC · 2D RPG</p>
+  <h3><a href="{{ project.url | relative_url }}">{{ project.title | escape }}</a></h3>
+  <p>{{ project.excerpt | strip_html | escape }}</p>
+  <div class="world-tools" aria-label="사용 도구">{% for tool in project.tools %}<span>{{ tool | escape }}</span>{% endfor %}</div>
+  <p class="world-project-role">맡은 역할 <strong>{{ project.role | escape }}</strong></p>
+  <div class="world-project-card__footer">
+    <a href="{{ project.url | relative_url }}">프로젝트 자세히 보기 <span aria-hidden="true">→</span></a>
+    {% include project-repository-link.html project=project %}
+  </div>
+</article>

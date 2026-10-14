@@ -1,0 +1,23 @@
+name: Build blog preview
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v6
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Check generated site
+        run: python3 scripts/check_site.py --site-dir _site
+      - name: Upload preview
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./_site
