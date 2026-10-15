@@ -1,6 +1,6 @@
 {% assign project = include.project %}
 <article class="world-project-card">
-  <p class="world-eyebrow">PC · 2D RPG</p>
+  <p class="world-eyebrow">[ PROJECT ]</p>
   <h3><a href="{{ project.url | relative_url }}">{{ project.title | escape }}</a></h3>
   <p>{{ project.excerpt | strip_html | escape }}</p>
   <div class="world-tools" aria-label="사용 도구">{% for tool in project.tools %}<span>{{ tool | escape }}</span>{% endfor %}</div>

@@ -1,0 +1,162 @@
+@font-face {
+  font-family: "Galmuri11";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Galmuri11.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 45 920;
+  font-display: swap;
+  src: url("../fonts/PretendardVariable.woff2") format("woff2");
+}
+
+html { font-size: 16px; }
+body { font-family: $sans-serif; line-height: 1.8; }
+h1, h2, h3, h4, h5, h6, .author__name, .site-title {
+  font-family: "Galmuri11", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 3px solid #975c2d;
+  outline-offset: 4px;
+}
+.page__content { word-break: keep-all; overflow-wrap: anywhere; }
+.page__content h2 { border-bottom-color: #c9c5a9; }
+.page__content a, .archive__item-title a { text-underline-offset: .18em; }
+.masthead { border: 0; background: #f4ecd7; }
+.masthead__inner-wrap { max-width: 1100px; padding: 1rem 0; border-bottom: 3px solid #495943; }
+.greedy-nav { background: transparent; }
+.greedy-nav .site-title {
+  display: flex;
+  align-items: center;
+  margin-right: 1.3rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  white-space: normal;
+  line-height: 1.7;
+}
+.site-title::before {
+  content: "";
+  display: inline-block;
+  flex: 0 0 10px;
+  height: 10px;
+  margin: 0 15px 0 4px;
+  background: #bb783f;
+  box-shadow: 4px 0 #495943, 0 -4px #495943, -4px 0 #495943, 0 4px #495943;
+}
+.masthead__menu-item a { font-weight: 500; font-size: .85rem; }
+.greedy-nav a { color: #495943; }
+.greedy-nav .hidden-links { background: #faf5e7; border: 2px solid #6b7155; border-radius: 0; }
+.greedy-nav .hidden-links::before, .greedy-nav .hidden-links::after { display: none; }
+.search-content { background: #f4ecd7; }
+.search-content__inner-wrap { max-width: 1100px; }
+.search-content .search-input { color: #373a2c; }
+// The air skin forces white footer text; keep the pixel footer readable.
+.page__footer { background: #ece3cc; border-top: 2px solid #6b7155; color: #655b46 !important; }
+.page__footer footer { max-width: 1100px; padding-top: 1.4rem; }
+.page__footer a { color: #526846; }
+.author__bio { font-size: .85rem; }
+.author__urls-wrapper .btn, .btn { border-radius: 0; }
+.btn--primary { background: #526846; }
+.btn--primary:hover { background: #3f5236; }
+.toc { background: #faf5e7; border: 1px solid #bfc3a6; border-radius: 0; }
+.toc .nav__title { background: #617755; font-family: $sans-serif; }
+.page__content table { background: #faf5e7; }
+.page__content th { background: #e6dfc8; }
+.page__content pre, .page__content code { font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+.page__content pre { font-size: .8rem; }
+.archive__item-title { line-height: 1.6; }
+.archive__item-excerpt { font-family: $sans-serif; }
+
+.lasorie-home #main { max-width: 1100px; }
+.lasorie-home .page { float: none; width: 100%; padding-right: 0; }
+.lasorie-home .page__title, .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.world-eyebrow {
+  margin: 0 0 .65rem !important;
+  font-family: "Galmuri11", "Malgun Gothic", sans-serif;
+  font-size: .68rem !important;
+  font-weight: 400;
+  letter-spacing: .06em;
+  color: #78684f;
+}
+.world-hero { padding: 1.7rem 1.7rem 0; border: 2px solid #495943; background: #d9e2c3; box-shadow: 5px 5px 0 #bfc3a6; }
+.world-hero .world-eyebrow { color: #4b6043; }
+.world-hero h2 { margin: .6rem 0 1rem !important; border: 0; font-size: 2.15rem; line-height: 1.4; color: #373a2c; }
+.world-intro { margin-bottom: 0 !important; font-size: .85rem !important; }
+.world-terrain {
+  position: relative;
+  height: 80px;
+  margin: 1.2rem -1.7rem 0;
+  overflow: hidden;
+  background: linear-gradient(to top, #617755 0 14px, #9cb085 14px 28px, transparent 28px);
+}
+.world-mountain {
+  position: absolute;
+  bottom: 28px;
+  left: 58%;
+  width: 24px;
+  height: 24px;
+  background: #8b9f76;
+  box-shadow: 24px 0 #8b9f76, 48px 0 #8b9f76, 0 -24px #8b9f76, 24px -24px #8b9f76, 24px -48px #8b9f76;
+}
+.world-mountain + .world-mountain { left: 79%; background: #708963; box-shadow: 24px 0 #708963, 48px 0 #708963, 0 -24px #708963, 24px -24px #708963, 24px -48px #708963; }
+.world-home-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 1.5rem; margin-top: 2rem; }
+.world-journal, .world-project-card { padding: 1.3rem; border: 2px solid #6b7155; background: #faf5e7; box-shadow: 4px 4px 0 #d4cdb6; }
+.world-journal { align-self: start; }
+.world-section { margin-top: 2.4rem; }
+.world-section__heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.world-section__heading h2 { margin: 0 !important; border: 0; font-size: 1.25rem; }
+.world-section__heading > a { flex-shrink: 0; font-size: .75rem; }
+.world-empty { padding: .6rem 0 1rem; }
+.world-empty p { margin: 0 !important; font-size: .9rem; }
+.world-empty span { display: block; margin-top: .6rem; color: #78684f; font-size: .85rem; line-height: 1.8; }
+.world-topics, .world-tools { display: flex; flex-wrap: wrap; gap: .45rem; }
+.world-topics span, .world-topics a, .world-tools span { padding: .3rem .65rem; border: 1px solid #c9c5a9; color: #5a6047; background: #e6dfc8; font-size: .7rem; line-height: 1.6; }
+.world-topics a { text-decoration: none; }
+.world-topics a:hover { background: #d6d8bb; }
+.world-journal__links { margin-top: .5rem; }
+.world-projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.world-featured .world-projects { grid-template-columns: minmax(0, 1fr); }
+.world-project-card h3 { margin: .25rem 0 .6rem !important; font-size: 1.5rem; line-height: 1.6; }
+.world-project-card h3 a { text-decoration: none; color: #975c2d; }
+.world-project-card > p:not(.world-eyebrow) { font-size: .85rem; }
+.world-project-role { margin: 1rem 0 !important; }
+.world-project-role strong { margin-left: .5rem; }
+.world-project-card__footer { display: flex; flex-wrap: wrap; gap: .6rem; border-top: 1px solid #c9c5a9; padding-top: .8rem; font-size: .75rem; }
+.world-repository-pending { color: #78684f; font-size: .7rem; }
+.world-repository-link { font-size: .75rem; }
+.world-all-projects { display: block; text-align: right; margin-top: .75rem; font-size: .75rem; }
+.world-archive-nav { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0 1.8rem; font-size: .85rem; }
+.world-learning { padding-top: .2rem; }
+
+@media (min-width: 900px) { html { font-size: 18px; } }
+@media (max-width: 1150px) { .masthead__inner-wrap { margin-right: 1.5rem; margin-left: 1.5rem; } }
+@media (max-width: 760px) {
+  .world-home-grid { grid-template-columns: minmax(0, 1fr); }
+  .world-hero { padding: 1.3rem 1.3rem 0; }
+  .world-hero h2 { font-size: 1.9rem; }
+  .world-terrain { margin-left: -1.3rem; margin-right: -1.3rem; }
+  .world-journal, .world-project-card { padding: 1.2rem; }
+  .world-section { margin-top: 2rem; }
+  .world-section__heading { align-items: center; }
+}
+@media (max-width: 640px) {
+  .masthead__inner-wrap { margin-right: 1rem; margin-left: 1rem; }
+  .greedy-nav .site-title { font-size: .82rem; margin-right: .5rem; }
+  .world-projects { grid-template-columns: minmax(0, 1fr); }
+  .world-hero h2 { font-size: 1.65rem; }
+}

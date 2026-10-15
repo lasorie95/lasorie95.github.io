@@ -91,7 +91,11 @@ def check_site(site_dir: Path) -> list[str]:
     for excluded in ("docs", "scripts", "README.md", "Gemfile", "Gemfile.lock"):
         if (root / excluded).exists():
             errors.append(f"Development file is published: {excluded}")
-    for required in ("sitemap.xml", "feed.xml", "assets/css/main.css", "assets/js/main.min.js"):
+    for required in (
+        "sitemap.xml", "feed.xml", "assets/css/main.css", "assets/js/main.min.js",
+        "assets/fonts/Galmuri11.woff2", "assets/fonts/PretendardVariable.woff2",
+        "assets/fonts/Galmuri-OFL.md", "assets/fonts/Pretendard-LICENSE.txt",
+    ):
         if not (root / required).is_file():
             errors.append(f"Missing generated asset: {required}")
     return errors

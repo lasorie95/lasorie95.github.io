@@ -7,25 +7,18 @@ classes: "wide lasorie-home"
 
 <section class="world-hero" aria-label="블로그 소개">
   <div class="world-hero__copy">
-    <p class="world-eyebrow">게임 개발 · 공부 · 프로젝트</p>
-    <h2>작은 아이디어를<br>게임으로 만드는 기록</h2>
-    <p class="world-intro">{{ site.author.bio | escape }}</p>
-    <div class="world-topics" aria-label="기록할 분야">
-      <span>게임 개발 일지</span><span>C#</span><span>Godot</span><span>2D dot Graphic</span><span>공부 회고</span>
-    </div>
-    <div class="world-actions">
-      <a class="btn btn--primary" href="{{ '/posts/' | relative_url }}">개발·공부 기록 보기</a>
-      <a class="world-text-link" href="{{ '/projects/' | relative_url }}">프로젝트 보기 <span aria-hidden="true">→</span></a>
-    </div>
+    <p class="world-eyebrow">WELCOME TO MY LITTLE WORLD</p>
+    <h2>오늘의 배움이<br>내일의 세계가 되도록.</h2>
+    <p class="world-intro">{{ site.author.name | escape }} · {{ site.author.bio | escape }}</p>
   </div>
-  <div class="world-hero__mark" aria-hidden="true">
-    <span class="world-mark">L</span>
-    <span class="world-mark__caption">LASORIE<br>RPG WORLD</span>
+  <div class="world-terrain" aria-hidden="true">
+    <span class="world-mountain"></span><span class="world-mountain"></span>
   </div>
 </section>
-<section class="world-section" aria-labelledby="recent-notes">
+<div class="world-home-grid">
+<section class="world-journal" aria-labelledby="recent-notes">
   <div class="world-section__heading">
-    <div><p class="world-eyebrow">배우고, 만들고, 돌아보기</p><h2 id="recent-notes">최근 기록</h2></div>
+    <div><p class="world-eyebrow">[ JOURNAL ]</p><h2 id="recent-notes">모험의 기록</h2></div>
     <a href="{{ '/posts/' | relative_url }}">전체 글 <span aria-hidden="true">→</span></a>
   </div>
   {% if site.posts.size > 0 %}
@@ -33,15 +26,24 @@ classes: "wide lasorie-home"
       {% for post in site.posts limit:4 %}{% include archive-single.html type="list" %}{% endfor %}
     </div>
   {% else %}
-    <div class="world-empty"><p>아직 등록된 글이 없습니다.</p><span>게임 개발과 공부의 기록이 이곳에 쌓입니다.</span></div>
+    <div class="world-empty"><p>아직 등록된 글이 없습니다.</p><span>개발하며 배운 것과<br>공부한 내용을 이곳에 남깁니다.</span></div>
   {% endif %}
-</section>
-<section class="world-section" aria-labelledby="featured-projects">
-  <div class="world-section__heading">
-    <div><p class="world-eyebrow">아이디어를 프로젝트로</p><h2 id="featured-projects">대표 프로젝트</h2></div>
-    <a href="{{ '/projects/' | relative_url }}">모든 프로젝트 <span aria-hidden="true">→</span></a>
+  <div class="world-topics world-journal__links">
+    <a href="{{ '/posts/' | relative_url }}">개발·공부 기록</a>
+    <a href="{{ '/categories/' | relative_url }}">분야별 기록</a>
   </div>
+</section>
+<section class="world-featured" aria-labelledby="featured-projects">
+  <h2 id="featured-projects" class="visually-hidden">대표 프로젝트</h2>
   <div class="world-projects">
-    {% for project in site.projects limit:2 %}{% include project-card.html project=project %}{% endfor %}
+    {% for project in site.projects limit:1 %}{% include project-card.html project=project %}{% endfor %}
+  </div>
+  <a class="world-all-projects" href="{{ '/projects/' | relative_url }}">모든 프로젝트 <span aria-hidden="true">→</span></a>
+</section>
+</div>
+<section class="world-section world-learning" aria-label="기록할 분야">
+  <p class="world-eyebrow">LEARNING INVENTORY</p>
+  <div class="world-topics">
+    <span>게임 개발 일지</span><span>C#</span><span>Godot</span><span>2D dot Graphic</span><span>공부 회고</span>
   </div>
 </section>
