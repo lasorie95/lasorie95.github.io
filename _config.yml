@@ -1,0 +1,83 @@
+title: "Lasorie RPG World"
+name: "lasorie95"
+description: "게임 개발 일지와 C#, Godot, 2D dot Graphic, 공부 회고를 기록하는 블로그입니다."
+url: "https://lasorie95.github.io"
+baseurl: ""
+repository: "lasorie95/lasorie95.github.io"
+locale: "ko-KR"
+timezone: "Asia/Seoul"
+remote_theme: "mmistakes/minimal-mistakes@4.28.1"
+minimal_mistakes_skin: "air"
+search: true
+search_provider: lunr
+search_full_content: true
+lunr:
+  search_within_pages: true
+enable_copy_code_button: true
+date_format: "%Y-%m-%d"
+markdown: kramdown
+highlighter: rouge
+permalink: /posts/:title/
+author:
+  name: "lasorie95"
+  bio: "TA를 지향하는 일반인 입니다."
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/lasorie95"
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/lasorie95"
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      show_date: true
+      toc: true
+      toc_sticky: true
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: true
+      show_date: false
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+plugins:
+  - jekyll-remote-theme
+  - jekyll-include-cache
+  - jekyll-feed
+  - jekyll-sitemap
+include:
+  - _pages
+exclude:
+  - .worktrees
+  - .superpowers
+  - .bundle
+  - vendor
+  - docs
+  - scripts
+  - README.md
+  - Gemfile
+  - Gemfile.lock

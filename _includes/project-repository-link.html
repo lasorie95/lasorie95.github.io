@@ -1,0 +1,7 @@
+{% assign project = include.project %}
+{% assign repository_prefix = project.repository_url | slice: 0, 19 %}
+{% if project.repository_public == true and repository_prefix == 'https://github.com/' %}
+  <a class="world-repository-link" href="{{ project.repository_url | escape }}">GitHub 저장소 보기</a>
+{% else %}
+  <span class="world-repository-pending">프로젝트 저장소 공개 준비 중</span>
+{% endif %}

@@ -1,0 +1,47 @@
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif; }
+.page__content { word-break: keep-all; overflow-wrap: break-word; }
+.masthead__menu-item a { font-weight: 600; }
+.site-title { white-space: normal; line-height: 1.3; }
+.lasorie-home .page { float: none; width: 100%; padding-right: 0; }
+.lasorie-home .page__title { font-size: 1rem; color: #536c83; margin-bottom: 1.5rem; }
+.world-eyebrow { margin: 0 0 .6rem !important; font-size: .7rem !important; font-weight: 700; letter-spacing: .07em; color: #4c789d; }
+.world-hero { display: grid; grid-template-columns: 1fr auto; gap: 2rem; padding: 2.5rem; border: 1px solid #d8e6f1; border-radius: 14px; background: linear-gradient(120deg, #f1f7fb, #e8f1f8); }
+.world-hero h2 { margin: .2rem 0 1rem !important; border: 0; font-size: 2rem; line-height: 1.35; letter-spacing: -.045em; color: #233c54; }
+.world-intro { color: #566e82; font-size: .9rem !important; }
+.world-topics, .world-tools { display: flex; flex-wrap: wrap; gap: .4rem; }
+.world-topics span, .world-tools span { padding: .3rem .6rem; border: 1px solid #d5e4ee; border-radius: 5px; color: #426380; background: #fff; font-size: .65rem; }
+.world-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
+.world-actions .btn { margin: 0; border-radius: 6px; font-size: .75rem; }
+.world-text-link { font-size: .75rem; font-weight: 600; }
+.world-hero__mark { align-self: center; padding: 1rem; text-align: center; color: #6488a7; }
+.world-mark { display: block; width: 90px; margin: 0 auto .8rem; border: 5px solid #c3d8e9; border-radius: 8px; font-size: 3rem; line-height: 90px; font-weight: 800; color: #406d94; box-shadow: 8px 8px 0 #d6e4ef; }
+.world-mark__caption { display: block; font-size: .6rem; font-weight: 700; line-height: 1.6; letter-spacing: .15em; }
+.world-section { margin-top: 2.7rem; }
+.world-section__heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: 1.2rem; }
+.world-section__heading h2 { margin: 0 !important; border: 0; font-size: 1.15rem; }
+.world-section__heading > a { flex-shrink: 0; font-size: .7rem; font-weight: 600; }
+.world-empty { padding: 1.8rem; border: 1px dashed #cddce7; border-radius: 10px; background: #fbfdff; }
+.world-empty p { margin: 0 !important; font-size: .85rem; color: #5f7285; }
+.world-empty span { display: block; margin-top: .5rem; color: #7b8c9a; font-size: .7rem; }
+.world-projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+.world-project-card { padding: 1.6rem; border: 1px solid #dce6ee; border-radius: 10px; box-shadow: 0 4px 16px rgba(28, 61, 87, .035); }
+.world-project-card h3 { margin: .3rem 0 .7rem !important; font-size: 1.25rem; }
+.world-project-card h3 a { text-decoration: none; color: #264b6a; }
+.world-project-card > p:not(.world-eyebrow) { font-size: .8rem; color: #677b8b; }
+.world-project-role { margin: 1.2rem 0 !important; }
+.world-project-role strong { margin-left: .6rem; color: #3c5870; }
+.world-project-card__footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .7rem; border-top: 1px solid #e8eef3; padding-top: 1rem; font-size: .7rem; }
+.world-project-card__footer > a { font-weight: 600; }
+.world-repository-pending { color: #748594; font-size: .65rem; }
+.world-repository-link { font-size: .7rem; }
+.world-archive-nav { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0 1.8rem; font-size: .8rem; }
+@media (max-width: 640px) {
+  .world-projects { grid-template-columns: minmax(0, 1fr); }
+  .world-hero { grid-template-columns: 1fr; padding: 1.4rem; gap: 0; }
+  .world-hero h2 { font-size: 1.6rem; }
+  .world-hero__mark { display: none; }
+  .world-section__heading { align-items: center; }
+  .world-section__heading .world-eyebrow { font-size: .6rem !important; }
+  .world-empty, .world-project-card { padding: 1.2rem; }
+  .world-section { margin-top: 2rem; }
+}
