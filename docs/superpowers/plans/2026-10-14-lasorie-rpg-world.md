@@ -72,17 +72,17 @@
 - `project-card.html`과 `project-repository-link.html`은 `include.project`로 Jekyll document를 받는다. 카드 제목은 문서의 `url`로 연결한다. 저장소 helper는 `repository_public`과 URL이 모두 유효할 때만 외부 링크를 만든다.
 - 검증 도구의 인터페이스는 `read_page(site_dir: Path, route: str) -> str`, `check_site(site_dir: Path) -> list[str]`, CLI `python scripts/check_site.py --site-dir <directory>`이다. 오류가 없으면 `PASS`와 종료 코드 0, 오류가 있으면 경로별 오류와 종료 코드 1을 반환한다.
 
-- [ ] **Step 1: 실제 출력에 대한 확인 도구를 먼저 작성한다.** 필수 경로 `/`, `/posts/`, `/categories/`, `/tags/`, `/projects/`, `/projects/project-rpg/`, `/about/`와 로컬 내부 링크의 파일 존재 여부를 확인한다. 생성된 HTML에 사이트 제목·소개·Project RPG·역할·도구가 표시되고, 비공개 저장소 링크와 mailto 링크는 없음을 확인한다.
-- [ ] **Step 2: 초기 저장소에서 확인이 실패하는지 확인한다.** `python scripts/check_site.py --site-dir .`를 실행한다. 현재 Hello World 화면과 없는 페이지 때문에 종료 코드 1이어야 한다.
-- [ ] **Step 3: Jekyll 설정을 작성한다.** Gemfile에 공식 remote-theme 방식의 `github-pages`와 `jekyll-include-cache`를 넣고, config plugins에 `jekyll-remote-theme`, `jekyll-include-cache`, `jekyll-feed`, `jekyll-sitemap`을 설정한다. `_pages`를 include하고 `projects` collection의 `output: true`와 permalink를 설정한다. docs·scripts·README·Gemfile·빌드 캐시를 HTML 산출물에서 제외한다.
-- [ ] **Step 4: 한국어 UI와 읽기 화면을 작성한다.** 테마 버전의 한국어 UI 문구를 사용하고 사용자 제공 메뉴명을 적용한다. 홈은 소개·최신 글·대표 프로젝트 영역, 글 목록은 최신순, 분류 페이지는 테마의 Liquid category/tag archive를 사용한다. 등록된 글이 없을 때 각 화면에 한국어 안내를 표시한다. 소개는 정확한 소개 문구와 관심 분야를 사용한다.
-- [ ] **Step 5: 포트폴리오와 공유 helper를 작성한다.** 제공한 설명·도구·역할을 `_projects/project-rpg.md`에 넣고 메뉴 및 홈에서 프로젝트 상세로 연결한다. 실제 이미지 없이 텍스트 카드로 렌더링하며, 저장소 링크 대신 공개 준비 안내를 표시한다.
-- [ ] **Step 6: 검색과 스타일을 적용한다.** config는 `search: true`, `search_provider: lunr`, `lunr.search_within_pages: true`로 설정한다. air skin을 import한 뒤 사이트 영역에 한정한 모바일 여백·카드 간격·제목 줄바꿈 스타일을 적용한다. 테마의 검색·코드 강조·RSS·사이트맵을 사용한다.
-- [ ] **Step 7: 게시 없는 빌드 workflow를 작성한다.** push(작업 브랜치 포함)와 pull_request 이벤트에서 `permissions: contents: read`로 `actions/checkout@v6`, `actions/jekyll-build-pages@v1`(`source: ./`, `destination: ./_site`), 산출물 확인 도구, `actions/upload-pages-artifact@v4`를 실행한다. deploy 단계와 Pages 설정 변경은 넣지 않는다. Actions에서는 `python3 scripts/check_site.py --site-dir _site`를 실행한다.
-- [ ] **Step 8: 제작 소스를 기록하고 작업 브랜치만 올린다.** `git diff --check`와 변경 파일을 확인한 후 제작·검증 파일을 commit한다. 원격 현재 commit을 다시 확인해 동시 변경을 보존하고 검토용 PR을 만든다. PR을 만들면 앱에 연결한다. PR-triggered workflow의 성공과 해당 commit SHA에 대한 산출물을 확인한다. 쓰기 권한 제한이 있으면 위 환경 대안으로 실제 Jekyll 빌드를 실행한다.
-- [ ] **Step 9: 검토용 산출물을 확인한다.** 다운로드한 archive는 별도의 검토 디렉터리에 풀고 `python scripts/check_site.py --site-dir <output>`를 실행한다. `sitemap.xml`, `feed.xml`, 테마 CSS·JS가 존재하며 unresolved Liquid가 없는지 확인한다. `node --check <output>/assets/js/lunr/lunr-store.js`의 종료 코드 0으로 검색 데이터 JS 문법도 확인한다.
-- [ ] **Step 10: 브라우저로 확인한다.** 1440px/390px에서 홈·프로젝트 상세·메뉴를 보고 링크를 따라 이동한다. 검색에 `Project RPG`, `Godot`, `1인`을 입력해 실제 결과와 이동을 확인한다. 빈 글·카테고리·태그 화면, 이미지 없는 카드, 공개 준비 안내도 확인한다. 발견한 오류만 수정한 뒤 영향받은 확인을 다시 수행한다.
-- [ ] **Step 11: 확인된 상태를 기록한다.** 화면 검증에서 수정한 파일이 있으면 `git diff --check` 후 commit하고 영향받은 빌드·화면을 다시 확인한다. Task 2가 사용할 정확한 원격 commit과 빌드 결과를 기록한다.
+- [x] **Step 1: 실제 출력에 대한 확인 도구를 먼저 작성한다.** 필수 경로 `/`, `/posts/`, `/categories/`, `/tags/`, `/projects/`, `/projects/project-rpg/`, `/about/`와 로컬 내부 링크의 파일 존재 여부를 확인한다. 생성된 HTML에 사이트 제목·소개·Project RPG·역할·도구가 표시되고, 비공개 저장소 링크와 mailto 링크는 없음을 확인한다.
+- [x] **Step 2: 초기 저장소에서 확인이 실패하는지 확인한다.** `python scripts/check_site.py --site-dir .`를 실행한다. 현재 Hello World 화면과 없는 페이지 때문에 종료 코드 1이어야 한다.
+- [x] **Step 3: Jekyll 설정을 작성한다.** Gemfile에 공식 remote-theme 방식의 `github-pages`와 `jekyll-include-cache`를 넣고, config plugins에 `jekyll-remote-theme`, `jekyll-include-cache`, `jekyll-feed`, `jekyll-sitemap`을 설정한다. `_pages`를 include하고 `projects` collection의 `output: true`와 permalink를 설정한다. docs·scripts·README·Gemfile·빌드 캐시를 HTML 산출물에서 제외한다.
+- [x] **Step 4: 한국어 UI와 읽기 화면을 작성한다.** 테마 버전의 한국어 UI 문구를 사용하고 사용자 제공 메뉴명을 적용한다. 홈은 소개·최신 글·대표 프로젝트 영역, 글 목록은 최신순, 분류 페이지는 테마의 Liquid category/tag archive를 사용한다. 등록된 글이 없을 때 각 화면에 한국어 안내를 표시한다. 소개는 정확한 소개 문구와 관심 분야를 사용한다.
+- [x] **Step 5: 포트폴리오와 공유 helper를 작성한다.** 제공한 설명·도구·역할을 `_projects/project-rpg.md`에 넣고 메뉴 및 홈에서 프로젝트 상세로 연결한다. 실제 이미지 없이 텍스트 카드로 렌더링하며, 저장소 링크 대신 공개 준비 안내를 표시한다.
+- [x] **Step 6: 검색과 스타일을 적용한다.** config는 `search: true`, `search_provider: lunr`, `lunr.search_within_pages: true`로 설정한다. air skin을 import한 뒤 사이트 영역에 한정한 모바일 여백·카드 간격·제목 줄바꿈 스타일을 적용한다. 테마의 검색·코드 강조·RSS·사이트맵을 사용한다.
+- [x] **Step 7: 게시 없는 빌드 workflow를 작성한다.** push(작업 브랜치 포함)와 pull_request 이벤트에서 `permissions: contents: read`로 `actions/checkout@v6`, `actions/jekyll-build-pages@v1`(`source: ./`, `destination: ./_site`), 산출물 확인 도구, `actions/upload-pages-artifact@v4`를 실행한다. deploy 단계와 Pages 설정 변경은 넣지 않는다. Actions에서는 `python3 scripts/check_site.py --site-dir _site`를 실행한다.
+- [x] **Step 8: 제작 소스를 기록하고 작업 브랜치만 올린다.** `git diff --check`와 변경 파일을 확인한 후 제작·검증 파일을 commit한다. 원격 현재 commit을 다시 확인해 동시 변경을 보존하고 검토용 PR을 만든다. PR을 만들면 앱에 연결한다. PR-triggered workflow의 성공과 해당 commit SHA에 대한 산출물을 확인한다. 쓰기 권한 제한이 있으면 위 환경 대안으로 실제 Jekyll 빌드를 실행한다.
+- [x] **Step 9: 검토용 산출물을 확인한다.** 다운로드한 archive는 별도의 검토 디렉터리에 풀고 `python scripts/check_site.py --site-dir <output>`를 실행한다. `sitemap.xml`, `feed.xml`, 테마 CSS·JS가 존재하며 unresolved Liquid가 없는지 확인한다. `node --check <output>/assets/js/lunr/lunr-store.js`의 종료 코드 0으로 검색 데이터 JS 문법도 확인한다.
+- [x] **Step 10: 브라우저로 확인한다.** 1440px/390px에서 홈·프로젝트 상세·메뉴를 보고 링크를 따라 이동한다. 검색에 `Project RPG`, `Godot`, `1인`을 입력해 실제 결과와 이동을 확인한다. 빈 글·카테고리·태그 화면, 이미지 없는 카드, 공개 준비 안내도 확인한다. 발견한 오류만 수정한 뒤 영향받은 확인을 다시 수행한다.
+- [x] **Step 11: 확인된 상태를 기록한다.** 화면 검증에서 수정한 파일이 있으면 `git diff --check` 후 commit하고 영향받은 빌드·화면을 다시 확인한다. Task 2가 사용할 정확한 원격 commit과 빌드 결과를 기록한다.
 
 ### Task 2: 운영 안내, 최종 검토, 실제 게시
 
