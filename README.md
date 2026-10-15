@@ -75,9 +75,11 @@ repository_public: true
 | 소개 페이지 | `_pages/about.md` |
 | 홈의 소개 영역과 관심 분야 | `index.html` |
 | 프로젝트 정보 | `_projects/project-rpg.md` |
-| 색상과 간격 등 추가 스타일 | `_sass/lasorie.scss` |
+| 색상과 간격 등 추가 스타일 | `_sass/lasorie-pixel.scss` |
 
-공개 연락처는 아직 설정하지 않았습니다. 테마는 Minimal Mistakes 4.28.1의 air skin을 사용하며, 글과 프로젝트는 Markdown으로 관리합니다.
+공개 연락처는 아직 설정하지 않았습니다. Minimal Mistakes 4.28.1을 기반으로 픽셀 모험 일지 디자인을 적용했으며, 글과 프로젝트는 Markdown으로 관리합니다.
+
+제목에는 갈무리11, 본문에는 Pretendard를 사용합니다. 폰트 파일은 `assets/fonts/`에서 직접 제공하며, 코드 블록은 고정폭 글꼴을 유지합니다. 폰트별 저작권과 SIL Open Font License는 같은 폴더의 라이선스 파일에 보관합니다. 출처: [갈무리](https://github.com/quiple/galmuri), [Pretendard](https://github.com/orioncactus/pretendard). 홈의 픽셀 산은 배경 장식이며 실제 게임 화면이 아닙니다.
 
 ## 게시 확인과 문제 해결
 
