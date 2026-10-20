@@ -1,6 +1,9 @@
 ---
 title: "Recorded Lore 개발일지 #01 — 개발 환경과 첫 시작 씬 준비"
 date: 2026-10-21
+project: recorded-lore
+sidebar:
+  nav: [recorded-lore]
 categories:
   - 개발일지
 tags:

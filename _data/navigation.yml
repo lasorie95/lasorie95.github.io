@@ -5,3 +5,10 @@ main:
     url: /projects/
   - title: "소개"
     url: /about/
+
+recorded-lore:
+  - title: "Recorded Lore"
+    url: /projects/recorded-lore/
+    children:
+      - title: "세계관"
+        url: /projects/recorded-lore/worldbuilding/

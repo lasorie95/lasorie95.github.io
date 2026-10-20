@@ -55,7 +55,29 @@ excerpt: "이번 기록의 내용을 한두 문장으로 적습니다."
 
 ## 프로젝트 소개 수정하기
 
-현재 등록된 프로젝트는 없습니다. 새 프로젝트를 소개하려면 `_projects/` 안에 Markdown 파일을 추가합니다. 프로젝트 이름·소개·도구·역할과 본문을 작성하면 프로젝트 목록과 상세 페이지에 반영됩니다.
+Recorded Lore는 **프로젝트 → Recorded Lore → 세계관** 순서로 탐색합니다.
+
+- 프로젝트 소개와 기록 목록: `_projects/recorded-lore.md`
+- 세계관 카테고리: `_pages/recorded-lore-worldbuilding.html`
+- 프로젝트 내부 메뉴: `_data/navigation.yml`의 `recorded-lore`
+
+Recorded Lore 글에는 앞부분에 `project: recorded-lore`를 넣으면 프로젝트 기록 목록에 자동으로 표시됩니다. 세계관 글은 다음 형식으로 작성하면 세계관 카테고리에도 표시됩니다. 아직 세계관 글이 없어도 카테고리 페이지와 메뉴는 열립니다.
+
+```yaml
+---
+title: "세계관 글 제목"
+date: 2026-10-21
+project: recorded-lore
+categories:
+  - 세계관
+tags:
+  - Recorded Lore
+sidebar:
+  nav: [recorded-lore]
+---
+```
+
+새 프로젝트를 소개하려면 `_projects/` 안에 별도의 Markdown 파일을 추가합니다. 프로젝트 이름·소개·도구·역할과 본문을 작성하면 프로젝트 목록과 상세 페이지에 반영됩니다.
 
 ## 블로그 설정
 
