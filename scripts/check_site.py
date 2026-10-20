@@ -3,12 +3,10 @@
 import argparse
 from html.parser import HTMLParser
 from pathlib import Path
-import re
 from urllib.parse import unquote, urlsplit
 
-ROUTES = ("/", "/posts/", "/categories/", "/tags/", "/projects/", "/projects/project-rpg/", "/about/")
+ROUTES = ("/", "/posts/", "/categories/", "/tags/", "/projects/", "/about/")
 SITE_HOST = "lasorie95.github.io"
-PROJECT_REPOSITORY = "https://github.com/lasorie95/project_rpg"
 
 
 class Page(HTMLParser):
@@ -55,9 +53,8 @@ def check_site(site_dir: Path) -> list[str]:
             errors.append(f"Missing page: {route}")
 
     expected_text = {
-        "/": ("Lasorie RPG World", "Project RPG"),
+        "/": ("Lasorie RPG World",),
         "/about/": ("TA를 지향하는 일반인 입니다.", "C#", "Godot", "2D dot Graphic"),
-        "/projects/project-rpg/": ("Project RPG", "1인 개발", "Godot", "VS Code", "Git", "Aseprite"),
     }
     for route, words in expected_text.items():
         if route in sources:
@@ -66,18 +63,12 @@ def check_site(site_dir: Path) -> list[str]:
                 if word not in text:
                     errors.append(f"Missing visible content at {route}: {word}")
 
-    project_source = Path(__file__).resolve().parent.parent / "_projects/project-rpg.md"
-    repository_public = project_source.exists() and bool(
-        re.search(r"^repository_public:\s*true\s*$", project_source.read_text(encoding="utf-8"), re.M)
-    )
     for route, source in sources.items():
         page = Page(source)
         for link in page.links:
             url = urlsplit(link)
             if url.scheme == "mailto":
                 errors.append(f"Unprovided contact link at {route}")
-            if link.rstrip("/") == PROJECT_REPOSITORY and not repository_public:
-                errors.append(f"Private project repository linked at {route}")
             if url.scheme not in ("", "http", "https") or (url.netloc and url.netloc != SITE_HOST):
                 continue
             if not url.path or not url.path.startswith("/"):
@@ -88,7 +79,7 @@ def check_site(site_dir: Path) -> list[str]:
             elif not target.is_file():
                 errors.append(f"Broken internal link at {route}: {link}")
 
-    for excluded in ("docs", "scripts", "README.md", "Gemfile", "Gemfile.lock"):
+    for excluded in (".vscode", "docs", "scripts", "README.md", "Gemfile", "Gemfile.lock"):
         if (root / excluded).exists():
             errors.append(f"Development file is published: {excluded}")
     for required in (
@@ -109,4 +100,4 @@ if __name__ == "__main__":
     if problems:
         print("FAIL\n" + "\n".join(problems))
         raise SystemExit(1)
-    print(f"PASS: {len(ROUTES)} pages, links, project facts, and publication boundaries")
+    print(f"PASS: {len(ROUTES)} pages, links, profile, and publication boundaries")

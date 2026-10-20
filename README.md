@@ -1,6 +1,6 @@
 # Lasorie RPG World
 
-게임 개발·공부 기록과 Project RPG 포트폴리오를 모아두는 블로그입니다.
+게임 개발·공부 기록과 프로젝트 포트폴리오를 모아두는 블로그입니다.
 
 - [블로그 열기](https://lasorie95.github.io/)
 - [개발·공부 기록](https://lasorie95.github.io/posts/)
@@ -45,26 +45,17 @@ excerpt: "이번 기록의 내용을 한두 문장으로 적습니다."
 
 ## 이미지 넣기
 
-이미지를 저장소의 `assets/images/` 폴더에 올린 뒤 글이나 프로젝트 본문에서 사용합니다. 예를 들어 `assets/images/project-rpg-screen.png`를 올렸다면 다음처럼 적습니다.
+이미지를 저장소의 `assets/images/` 폴더에 올린 뒤 글이나 프로젝트 본문에서 사용합니다. 예를 들어 `assets/images/game-screen.png`를 올렸다면 다음처럼 적습니다.
 
 ```markdown
-![Project RPG 게임 화면](/assets/images/project-rpg-screen.png)
+![게임 화면](/assets/images/game-screen.png)
 ```
 
 이미지는 실제 본인이 공개할 화면을 사용하고, 설명은 이미지 내용을 알 수 있게 적습니다. 현재 블로그에는 게임 화면이나 프로필 사진을 임의로 넣지 않았습니다.
 
 ## 프로젝트 소개 수정하기
 
-`_projects/project-rpg.md`에서 프로젝트 이름·소개·도구·역할과 본문을 수정합니다. 이 문서가 프로젝트 목록과 상세 페이지에 반영됩니다. 다른 프로젝트는 `_projects/` 안에 별도의 Markdown 파일로 추가할 수 있습니다.
-
-Project RPG 저장소가 Public으로 바뀌고, 로그아웃 상태에서도 주소에 접근할 수 있음을 확인한 뒤 아래 값을 바꾸세요.
-
-```yaml
-repository_url: "https://github.com/lasorie95/project_rpg"
-repository_public: true
-```
-
-`repository_public: false`이면 링크 대신 **프로젝트 저장소 공개 준비 중**을 표시합니다. 이 설정은 블로그의 버튼 표시만 바꾸며, 게임 저장소 자체의 공개 여부를 변경하지 않습니다.
+현재 등록된 프로젝트는 없습니다. 새 프로젝트를 소개하려면 `_projects/` 안에 Markdown 파일을 추가합니다. 프로젝트 이름·소개·도구·역할과 본문을 작성하면 프로젝트 목록과 상세 페이지에 반영됩니다.
 
 ## 블로그 설정
 
@@ -74,7 +65,7 @@ repository_public: true
 | 주요 메뉴 | `_data/navigation.yml` |
 | 소개 페이지 | `_pages/about.md` |
 | 홈의 소개 영역과 관심 분야 | `index.html` |
-| 프로젝트 정보 | `_projects/project-rpg.md` |
+| 프로젝트 정보 | `_projects/` 안의 Markdown 파일 |
 | 색상과 간격 등 추가 스타일 | `_sass/lasorie-pixel.scss` |
 
 공개 연락처는 아직 설정하지 않았습니다. Minimal Mistakes 4.28.1을 기반으로 픽셀 모험 일지 디자인을 적용했으며, 글과 프로젝트는 Markdown으로 관리합니다.
@@ -91,6 +82,6 @@ repository_public: true
 python scripts/check_site.py --site-dir _site
 ```
 
-이 검증은 필수 페이지와 내부 링크, 제공받은 초기 소개·프로젝트 정보, 개발 파일 제외 여부를 확인합니다. 블로그 이름이나 초기 프로젝트 정보를 변경했다면 `scripts/check_site.py`의 해당 콘텐츠 확인 항목도 새 내용에 맞춰 조정하세요.
+이 검증은 필수 페이지와 내부 링크, 프로필 정보, 개발 파일 제외 여부를 확인합니다. 블로그 이름이나 프로필을 변경했다면 `scripts/check_site.py`의 해당 콘텐츠 확인 항목도 새 내용에 맞춰 조정하세요.
 
 빌드가 실패하면 Actions의 실패한 단계에서 오류 내용을 확인합니다. 글 위쪽의 `---` 구분, YAML 들여쓰기, 파일 날짜, 이미지 경로를 먼저 확인하세요. 기존 게시물이 남아 있다면 Pages 배포 결과와 브라우저 새로고침도 확인합니다.

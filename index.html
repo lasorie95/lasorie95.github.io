@@ -36,7 +36,11 @@ classes: "wide lasorie-home"
 <section class="world-featured" aria-labelledby="featured-projects">
   <h2 id="featured-projects" class="visually-hidden">대표 프로젝트</h2>
   <div class="world-projects">
-    {% for project in site.projects limit:1 %}{% include project-card.html project=project %}{% endfor %}
+    {% for project in site.projects limit:1 %}
+      {% include project-card.html project=project %}
+    {% else %}
+      <div class="world-empty"><p>아직 등록된 프로젝트가 없습니다.</p></div>
+    {% endfor %}
   </div>
   <a class="world-all-projects" href="{{ '/projects/' | relative_url }}">모든 프로젝트 <span aria-hidden="true">→</span></a>
 </section>
