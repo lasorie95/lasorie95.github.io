@@ -55,13 +55,16 @@ excerpt: "이번 기록의 내용을 한두 문장으로 적습니다."
 
 ## 프로젝트 소개 수정하기
 
-Recorded Lore는 **프로젝트 → Recorded Lore → 세계관** 순서로 탐색합니다.
+Recorded Lore는 **프로젝트 → Recorded Lore**에서 **개발일지**와 **세계관**으로 나누어 탐색합니다.
 
 - 프로젝트 소개와 기록 목록: `_projects/recorded-lore.md`
+- 개발일지 카테고리: `_pages/recorded-lore-devlog.html`
 - 세계관 카테고리: `_pages/recorded-lore-worldbuilding.html`
 - 프로젝트 내부 메뉴: `_data/navigation.yml`의 `recorded-lore`
 
 Recorded Lore 글에는 앞부분에 `project: recorded-lore`를 넣으면 프로젝트 기록 목록에 자동으로 표시됩니다. 세계관 글은 다음 형식으로 작성하면 세계관 카테고리에도 표시됩니다. 아직 세계관 글이 없어도 카테고리 페이지와 메뉴는 열립니다.
+
+개발일지는 같은 형식에서 `categories`를 `개발일지`로 지정하면 개발일지 카테고리에 표시됩니다. 기존 개발일지 #01도 이 분류를 사용합니다.
 
 ```yaml
 ---

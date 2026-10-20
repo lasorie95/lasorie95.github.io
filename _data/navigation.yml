@@ -10,5 +10,7 @@ recorded-lore:
   - title: "Recorded Lore"
     url: /projects/recorded-lore/
     children:
+      - title: "개발일지"
+        url: /projects/recorded-lore/devlog/
       - title: "세계관"
         url: /projects/recorded-lore/worldbuilding/

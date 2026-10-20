@@ -1,0 +1,29 @@
+---
+title: "개발일지"
+layout: archive
+permalink: /projects/recorded-lore/devlog/
+excerpt: "Recorded Lore의 개발 과정과 공부 기록을 모읍니다."
+project: recorded-lore
+sidebar:
+  nav: [recorded-lore]
+---
+
+<nav class="world-archive-nav" aria-label="프로젝트 경로">
+  <a href="{{ '/projects/' | relative_url }}">프로젝트</a>
+  <span aria-hidden="true">›</span>
+  <a href="{{ '/projects/recorded-lore/' | relative_url }}">Recorded Lore</a>
+  <span aria-hidden="true">›</span>
+  <span aria-current="page">개발일지</span>
+</nav>
+
+<p>Recorded Lore의 개발 과정과 공부 기록을 모으는 공간입니다.</p>
+
+{% assign project_posts = site.posts | where: "project", page.project %}
+{% assign devlog_posts = project_posts | where_exp: "post", "post.categories contains '개발일지'" %}
+{% if devlog_posts.size > 0 %}
+<div class="entries-list">
+  {% for post in devlog_posts %}{% include archive-single.html type="list" %}{% endfor %}
+</div>
+{% else %}
+<div class="world-empty"><p>아직 등록된 개발일지가 없습니다.</p></div>
+{% endif %}

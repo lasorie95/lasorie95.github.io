@@ -23,6 +23,7 @@ Godot와 C#으로 개발을 시작한 프로젝트입니다. 개발일지와 세
 ## 카테고리
 
 <nav class="world-topics" aria-label="Recorded Lore 하위 카테고리">
+  <a href="{{ '/projects/recorded-lore/devlog/' | relative_url }}">개발일지 <span aria-hidden="true">→</span></a>
   <a href="{{ '/projects/recorded-lore/worldbuilding/' | relative_url }}">세계관 <span aria-hidden="true">→</span></a>
 </nav>
 

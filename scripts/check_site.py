@@ -7,7 +7,8 @@ from urllib.parse import unquote, urlsplit
 
 ROUTES = (
     "/", "/posts/", "/categories/", "/tags/", "/projects/", "/about/",
-    "/projects/recorded-lore/", "/projects/recorded-lore/worldbuilding/",
+    "/projects/recorded-lore/", "/projects/recorded-lore/devlog/",
+    "/projects/recorded-lore/worldbuilding/",
 )
 SITE_HOST = "lasorie95.github.io"
 
@@ -58,7 +59,8 @@ def check_site(site_dir: Path) -> list[str]:
     expected_text = {
         "/": ("Lasorie RPG World",),
         "/about/": ("TA를 지향하는 일반인 입니다.", "C#", "Godot", "2D dot Graphic"),
-        "/projects/recorded-lore/": ("Recorded Lore", "세계관"),
+        "/projects/recorded-lore/": ("Recorded Lore", "개발일지", "세계관"),
+        "/projects/recorded-lore/devlog/": ("Recorded Lore", "개발일지"),
         "/projects/recorded-lore/worldbuilding/": ("Recorded Lore", "세계관"),
     }
     for route, words in expected_text.items():
