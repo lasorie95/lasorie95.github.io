@@ -2,6 +2,7 @@
 title: "Recorded Lore 세계관 #04 — 현재의 대립 구도"
 date: 2026-10-21
 project: recorded-lore
+worldbuilding_order: 4
 sidebar:
   nav: [recorded-lore]
 categories:

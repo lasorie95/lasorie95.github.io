@@ -2,6 +2,7 @@
 title: "Recorded Lore 세계관 #03 — 심상석·정령석"
 date: 2026-10-21
 project: recorded-lore
+worldbuilding_order: 3
 sidebar:
   nav: [recorded-lore]
 categories:

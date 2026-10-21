@@ -20,6 +20,9 @@ sidebar:
 
 {% assign project_posts = site.posts | where: "project", page.project %}
 {% assign worldbuilding_posts = project_posts | where_exp: "post", "post.categories contains '세계관'" %}
+{% assign ordered_posts = worldbuilding_posts | where_exp: "post", "post.worldbuilding_order != nil" | sort: "worldbuilding_order" %}
+{% assign other_posts = worldbuilding_posts | where_exp: "post", "post.worldbuilding_order == nil" %}
+{% assign worldbuilding_posts = ordered_posts | concat: other_posts %}
 {% if worldbuilding_posts.size > 0 %}
 <div class="entries-list">
   {% for post in worldbuilding_posts %}{% include archive-single.html type="list" %}{% endfor %}

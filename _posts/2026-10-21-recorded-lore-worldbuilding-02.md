@@ -2,6 +2,7 @@
 title: "Recorded Lore 세계관 #02 — 신들의 관계"
 date: 2026-10-21
 project: recorded-lore
+worldbuilding_order: 2
 sidebar:
   nav: [recorded-lore]
 categories:

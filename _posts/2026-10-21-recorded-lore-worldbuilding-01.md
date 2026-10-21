@@ -2,6 +2,7 @@
 title: "Recorded Lore 세계관 #01 — 창세신화"
 date: 2026-10-21
 project: recorded-lore
+worldbuilding_order: 1
 sidebar:
   nav: [recorded-lore]
 categories:
