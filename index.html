@@ -9,7 +9,7 @@ classes: "wide lasorie-home"
   <div class="world-hero__copy">
     <p class="world-eyebrow">WELCOME TO MY LITTLE WORLD</p>
     <h2>오늘의 배움이<br>내일의 세계가 되도록.</h2>
-    <p class="world-intro">{{ site.author.name | escape }} · {{ site.author.bio | escape }}</p>
+    <p class="world-intro">게임 개발과 자격증 공부, 배움과 회고를 기록합니다.<br>{{ site.author.name | escape }} · {{ site.author.bio | escape }}</p>
   </div>
   <div class="world-terrain" aria-hidden="true">
     <span class="world-mountain"></span><span class="world-mountain"></span>
@@ -18,7 +18,7 @@ classes: "wide lasorie-home"
 <div class="world-home-grid">
 <section class="world-journal" aria-labelledby="recent-notes">
   <div class="world-section__heading">
-    <div><p class="world-eyebrow">[ JOURNAL ]</p><h2 id="recent-notes">모험의 기록</h2></div>
+    <div><p class="world-eyebrow">[ JOURNAL ]</p><h2 id="recent-notes">최근 기록</h2></div>
     <a href="{{ '/posts/' | relative_url }}">전체 글 <span aria-hidden="true">→</span></a>
   </div>
   {% if site.posts.size > 0 %}
@@ -48,6 +48,8 @@ classes: "wide lasorie-home"
 <section class="world-section world-learning" aria-label="기록할 분야">
   <p class="world-eyebrow">LEARNING INVENTORY</p>
   <div class="world-topics">
-    <span>게임 개발 일지</span><span>C#</span><span>Godot</span><span>2D dot Graphic</span><span>공부 회고</span>
+    <span>게임 개발 일지</span><span>C#</span><span>Godot</span><span>2D dot Graphic</span>
+    <a href="{{ '/categories/certification-study/' | relative_url }}">자격증 공부</a>
+    <a href="{{ '/categories/development-retrospective/' | relative_url }}">개발 회고</a>
   </div>
 </section>

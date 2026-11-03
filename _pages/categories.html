@@ -1,8 +1,30 @@
 ---
 title: "카테고리"
-layout: categories
+layout: archive
 permalink: /categories/
 ---
 
 <p><a href="{{ '/posts/' | relative_url }}">모든 개발·공부 기록 보기</a></p>
-{% if site.categories.size == 0 %}<div class="world-empty"><p>아직 등록된 카테고리가 없습니다.</p></div>{% endif %}
+{% assign category_names = site.data.categories | map: "title" %}
+{% for category in site.categories %}
+  {% unless category_names contains category[0] %}
+    {% assign category_names = category_names | push: category[0] %}
+  {% endunless %}
+{% endfor %}
+
+<ul class="taxonomy__index">
+  {% for category_name in category_names %}
+    {% assign category_posts = site.categories[category_name] %}
+    <li><a href="#{{ category_name | slugify }}"><strong>{{ category_name | escape }}</strong> <span class="taxonomy__count">{{ category_posts.size | default: 0 }}</span></a></li>
+  {% endfor %}
+</ul>
+
+{% for category_name in category_names %}
+  {% assign category_info = site.data.categories | where: "title", category_name | first %}
+  <section id="{{ category_name | slugify }}" class="taxonomy__section">
+    <h2 class="archive__subtitle">{{ category_name | escape }}</h2>
+    {% if category_info.url %}<p><a href="{{ category_info.url | relative_url }}">{{ category_name | escape }} 글 모아보기</a></p>{% endif %}
+    {% include category-posts.html category=category_name %}
+    <a href="#page-title" class="back-to-top">맨 위로 &uarr;</a>
+  </section>
+{% endfor %}

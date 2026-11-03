@@ -7,6 +7,7 @@ from urllib.parse import unquote, urlsplit
 
 ROUTES = (
     "/", "/posts/", "/categories/", "/tags/", "/projects/", "/about/",
+    "/categories/certification-study/", "/categories/development-retrospective/",
     "/projects/recorded-lore/", "/projects/recorded-lore/devlog/",
     "/projects/recorded-lore/worldbuilding/",
 )
@@ -57,7 +58,10 @@ def check_site(site_dir: Path) -> list[str]:
             errors.append(f"Missing page: {route}")
 
     expected_text = {
-        "/": ("Lasorie RPG World",),
+        "/": ("Lasorie RPG World", "게임 개발과 자격증 공부, 배움과 회고를 기록합니다.", "최근 기록"),
+        "/categories/": ("개발일지", "세계관", "자격증 공부", "개발 회고"),
+        "/categories/certification-study/": ("자격증 공부", "학습 과정"),
+        "/categories/development-retrospective/": ("개발 회고", "배운 점"),
         "/about/": ("TA를 지향하는 일반인 입니다.", "C#", "Godot", "2D dot Graphic"),
         "/projects/recorded-lore/": ("Recorded Lore", "개발일지", "세계관"),
         "/projects/recorded-lore/devlog/": ("Recorded Lore", "개발일지"),
