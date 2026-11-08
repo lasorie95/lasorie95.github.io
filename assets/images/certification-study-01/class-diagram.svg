@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="360" viewBox="0 0 920 360" role="img" aria-labelledby="title desc">
+  <title id="title">회원과 주문의 클래스 다이어그램</title>
+  <desc id="desc">Member와 Order 클래스에 비공개 속성과 공개 연산이 있다. 회원 한 명은 주문을 0개 이상 가지며 각 주문은 회원 한 명과 연결된다.</desc>
+  <style>
+    text { font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; fill: #373a2c; font-size: 20px; }
+    .title { font-size: 24px; font-weight: bold; }
+    .box { fill: #faf5e7; stroke: #495943; stroke-width: 2; }
+    .line { stroke: #495943; stroke-width: 2; fill: none; }
+    .code { font-family: Consolas, monospace; font-size: 20px; }
+  </style>
+  <rect width="920" height="360" fill="#faf5e7"/>
+  <text class="title" x="460" y="42" text-anchor="middle">클래스 다이어그램 — 구조와 관계</text>
+  <rect class="box" x="40" y="95" width="300" height="205"/>
+  <path class="line" d="M40 150H340 M40 225H340"/>
+  <text x="190" y="130" text-anchor="middle">Member (회원)</text>
+  <text class="code" x="62" y="192">- memberId: int</text>
+  <text class="code" x="62" y="270">+ createOrder()</text>
+  <rect class="box" x="580" y="95" width="300" height="205"/>
+  <path class="line" d="M580 150H880 M580 225H880"/>
+  <text x="730" y="130" text-anchor="middle">Order (주문)</text>
+  <text class="code" x="602" y="192">- orderId: int</text>
+  <text class="code" x="602" y="270">+ calculateTotal()</text>
+  <path class="line" d="M340 190H580"/>
+  <text x="460" y="168" text-anchor="middle">주문</text>
+  <text x="365" y="222" text-anchor="middle">1</text>
+  <text x="545" y="222" text-anchor="middle">0..*</text>
+</svg>

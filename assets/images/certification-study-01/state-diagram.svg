@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="680" viewBox="0 0 900 680" role="img" aria-labelledby="title desc">
+  <title id="title">주문 한 건의 상태 다이어그램</title>
+  <desc id="desc">시작 상태에서 결제 대기로 진입한다. 결제 성공, 배송 시작, 수령 확인에 따라 결제 완료, 배송 중, 처리 완료로 전이한다. 결제 대기 중 취소하면 취소 상태로 전이한다.</desc>
+  <defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L11 6L1 11Z" fill="#495943"/></marker></defs>
+  <style>
+    text { font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; fill: #373a2c; font-size: 20px; }
+    .title { font-size: 24px; font-weight: bold; }
+    .state { fill: #e6dfc8; stroke: #495943; stroke-width: 2; }
+    .transition { fill: none; stroke: #495943; stroke-width: 2; marker-end: url(#arrow); }
+  </style>
+  <rect width="900" height="680" fill="#faf5e7"/>
+  <text class="title" x="450" y="40" text-anchor="middle">상태 다이어그램 — 사건에 따른 상태 변화</text>
+  <circle cx="500" cy="75" r="9" fill="#495943"/>
+  <path class="transition" d="M500 84V115"/>
+  <rect class="state" x="385" y="115" width="230" height="65" rx="15"/>
+  <text x="500" y="155" text-anchor="middle">결제 대기</text>
+  <path class="transition" d="M500 180V255"/>
+  <text x="535" y="224">결제 성공</text>
+  <rect class="state" x="385" y="255" width="230" height="65" rx="15"/>
+  <text x="500" y="295" text-anchor="middle">결제 완료</text>
+  <path class="transition" d="M500 320V395"/>
+  <text x="535" y="364">배송 시작</text>
+  <rect class="state" x="385" y="395" width="230" height="65" rx="15"/>
+  <text x="500" y="435" text-anchor="middle">배송 중</text>
+  <path class="transition" d="M500 460V535"/>
+  <text x="535" y="504">수령 확인</text>
+  <rect class="state" x="385" y="535" width="230" height="65" rx="15"/>
+  <text x="500" y="575" text-anchor="middle">처리 완료</text>
+  <path class="transition" d="M500 600V626"/>
+  <circle cx="500" cy="640" r="14" fill="none" stroke="#495943" stroke-width="2"/>
+  <circle cx="500" cy="640" r="9" fill="#495943"/>
+  <path class="transition" d="M385 147H175V255"/>
+  <text x="263" y="127" text-anchor="middle">주문 취소</text>
+  <rect class="state" x="65" y="255" width="220" height="65" rx="15"/>
+  <text x="175" y="295" text-anchor="middle">취소</text>
+  <path class="transition" d="M175 320V361"/>
+  <circle cx="175" cy="375" r="14" fill="none" stroke="#495943" stroke-width="2"/>
+  <circle cx="175" cy="375" r="9" fill="#495943"/>
+</svg>

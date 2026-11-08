@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="660" viewBox="0 0 1000 660" role="img" aria-labelledby="title desc">
+  <title id="title">주문 처리의 시퀀스 다이어그램</title>
+  <desc id="desc">사용자, 주문 화면, 주문 서비스, 결제 서비스의 생명선을 따라 주문 선택, 주문 요청, 결제 요청과 각 결과 응답이 위에서 아래 순서로 이어진다.</desc>
+  <defs>
+    <marker id="call" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L11 6L1 11Z" fill="#495943"/></marker>
+    <marker id="reply" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L11 6L1 11" fill="none" stroke="#495943" stroke-width="2"/></marker>
+  </defs>
+  <style>
+    text { font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; fill: #373a2c; font-size: 20px; }
+    .title { font-size: 24px; font-weight: bold; }
+    .line { stroke: #495943; stroke-width: 2; fill: none; }
+    .life { stroke: #8b927f; stroke-width: 2; stroke-dasharray: 6 5; }
+    .call { stroke: #495943; stroke-width: 2; marker-end: url(#call); }
+    .reply { stroke: #495943; stroke-width: 2; stroke-dasharray: 7 5; marker-end: url(#reply); }
+  </style>
+  <rect width="1000" height="660" fill="#faf5e7"/>
+  <text class="title" x="500" y="42" text-anchor="middle">시퀀스 다이어그램 — 메시지의 순서</text>
+  <circle class="line" cx="120" cy="89" r="14"/>
+  <path class="line" d="M120 103V139 M96 118H144 M120 139L102 162 M120 139L138 162"/>
+  <text x="120" y="188" text-anchor="middle">사용자</text>
+  <rect x="275" y="135" width="190" height="60" fill="#e6dfc8" stroke="#495943" stroke-width="2"/>
+  <text x="370" y="172" text-anchor="middle">주문 화면</text>
+  <rect x="525" y="135" width="190" height="60" fill="#e6dfc8" stroke="#495943" stroke-width="2"/>
+  <text x="620" y="172" text-anchor="middle">주문 서비스</text>
+  <rect x="775" y="135" width="190" height="60" fill="#e6dfc8" stroke="#495943" stroke-width="2"/>
+  <text x="870" y="172" text-anchor="middle">결제 서비스</text>
+  <path class="life" d="M120 200V610 M370 195V610 M620 195V610 M870 195V610"/>
+  <line class="call" x1="120" y1="245" x2="370" y2="245"/>
+  <text x="245" y="231" text-anchor="middle">주문하기 선택</text>
+  <line class="call" x1="370" y1="310" x2="620" y2="310"/>
+  <text x="495" y="296" text-anchor="middle">주문 요청</text>
+  <line class="call" x1="620" y1="375" x2="870" y2="375"/>
+  <text x="745" y="361" text-anchor="middle">결제 요청</text>
+  <line class="reply" x1="870" y1="440" x2="620" y2="440"/>
+  <text x="745" y="426" text-anchor="middle">결제 결과</text>
+  <line class="reply" x1="620" y1="505" x2="370" y2="505"/>
+  <text x="495" y="491" text-anchor="middle">주문 결과</text>
+  <line class="reply" x1="370" y1="570" x2="120" y2="570"/>
+  <text x="245" y="556" text-anchor="middle">처리 결과 표시</text>
+</svg>
