@@ -19,6 +19,8 @@ excerpt: "DFD와 자료 사전, UML 다이어그램과 관계, 애자일을 정�
 
 ## 오늘 공부한 범위
 
+<div class="post-table post-table--two" markdown="1">
+
 | 항목 | 내용 |
 |---|---|
 | 공부한 날짜 | 2026년 11월 8일 |
@@ -26,6 +28,8 @@ excerpt: "DFD와 자료 사전, UML 다이어그램과 관계, 애자일을 정�
 | 공부 시간 | 약 2~3시간 |
 | 참고 자료 | 수제비 2027 정보처리기사 필기 기본서(1) |
 | 오늘의 목표 | 요구사항 관련 개념을 익히고 기본 문제 풀어보기 |
+
+</div>
 
 ## DFD와 자료 사전
 
@@ -41,12 +45,20 @@ excerpt: "DFD와 자료 사전, UML 다이어그램과 관계, 애자일을 정�
 
 DFD가 데이터의 흐름을 보여준다면, DD는 그 흐름에 등장하는 데이터가 무엇인지 구체적으로 설명한다. 두 산출물의 내용이 서로 맞도록 함께 작성하고 보완하는 것이 중요하다. [구조적 분석과 자료 사전 설명](https://userpages.umbc.edu/~khoo/survey2.html)
 
+<div class="post-table post-table--two" markdown="1">
+
 | 구분 | 중심 질문 |
 |---|---|
 | DFD | 데이터가 어디에서 어디로 흐르고, 어떤 처리를 받는가? |
 | DD | 그 데이터는 무엇을 의미하며, 어떤 항목으로 구성되는가? |
 
+</div>
+
 ### 자료 사전의 주요 기호
+
+<p class="post-table-hint">좌우로 밀어 표의 나머지 열을 볼 수 있습니다.</p>
+
+<div class="post-table post-table--three" role="region" tabindex="0" aria-label="자료 사전의 주요 기호 표" markdown="1">
 
 | 기호 | 의미 | 예시 |
 |---|---|---|
@@ -56,6 +68,8 @@ DFD가 데이터의 흐름을 보여준다면, DD는 그 흐름에 등장하는 
 | `{ }` | 자료의 반복 | `{주문항목}` |
 | <code>[ A &#124; B ]</code> | 나열한 항목 중 선택 | <code>[카드 &#124; 계좌이체]</code> |
 | `* 설명 *` | 주석 또는 설명 | `* 고객을 구분하는 번호 *` |
+
+</div>
 
 반복 기호에는 허용 횟수를 함께 표시할 수 있으므로, 문제가 제시한 반복 범위도 같이 읽어야 한다. [자료 사전 기호와 구성 설명](https://csis.pace.edu/~marchese/SE616/L4/l4se.html)
 
@@ -75,6 +89,8 @@ DFD가 데이터의 흐름을 보여준다면, DD는 그 흐름에 등장하는 
 
 ### UML의 특징
 
+<div class="post-table post-table--two" markdown="1">
+
 | 특징 | 설명 |
 |---|---|
 | 가시화 언어 | 시스템의 개념과 구조를 그림으로 표현해 이해와 의사소통을 돕는다. |
@@ -82,9 +98,13 @@ DFD가 데이터의 흐름을 보여준다면, DD는 그 흐름에 등장하는 
 | 구축 언어 | 모델과 소스 코드를 연결하는 도구를 통해 코드 생성이나 역공학에 활용할 수 있다. |
 | 문서화 언어 | 요구사항과 설계 등 개발 과정의 내용을 기록하고 공유하는 데 활용한다. |
 
+</div>
+
 ‘구축 언어’라는 표현은 UML 자체가 일반적인 프로그래밍 언어처럼 실행된다는 뜻으로 외우기보다, **모델과 구현을 연결할 수 있다**는 의미로 이해해 두려고 한다.
 
 ### UML의 구성요소
+
+<div class="post-table post-table--two" markdown="1">
 
 | 구성요소 | 설명 |
 |---|---|
@@ -92,7 +112,13 @@ DFD가 데이터의 흐름을 보여준다면, DD는 그 흐름에 등장하는 
 | 관계 | 사물 사이의 의미 있는 연결 |
 | 다이어그램 | 사물과 관계를 특정 관점에서 그림으로 표현한 것 |
 
+</div>
+
 ### UML의 사물
+
+<p class="post-table-hint">좌우로 밀어 표의 나머지 열을 볼 수 있습니다.</p>
+
+<div class="post-table post-table--three" role="region" tabindex="0" aria-label="UML의 사물 표" markdown="1">
 
 | 종류 | 설명 | 대표 예시 |
 |---|---|---|
@@ -101,17 +127,25 @@ DFD가 데이터의 흐름을 보여준다면, DD는 그 흐름에 등장하는 
 | 그룹 사물 | 모델의 요소를 묶어 관리한다. | 패키지 |
 | 주해 사물 | 요소에 설명이나 제약조건을 덧붙인다. | 노트 |
 
+</div>
+
 여기서 **사물의 분류와 다이어그램의 분류는 구분해서 읽어야 한다.** 예를 들어 유스케이스는 구조 사물의 예로 다루지만, 유스케이스 다이어그램은 시스템이 제공하는 기능을 보여주는 행동 다이어그램에 속한다.
 
 ## UML 다이어그램의 분류
 
 크게는 **구조를 보여주는 다이어그램**과 **행동을 보여주는 다이어그램**으로 나눌 수 있다. 상호작용 다이어그램은 행동 다이어그램의 하위 분류다.
 
+<p class="post-table-hint">좌우로 밀어 표의 나머지 열을 볼 수 있습니다.</p>
+
+<div class="post-table post-table--three" role="region" tabindex="0" aria-label="UML 다이어그램의 분류 표" markdown="1">
+
 | 분류 | 표현하는 내용 | 종류 |
 |---|---|---|
 | 구조 다이어그램 | 시스템의 구성요소와 정적인 관계 | 클래스, 객체, 패키지, 컴포넌트, 배치, 복합 구조, 프로파일 |
 | 행동 다이어그램 | 시스템의 기능, 활동, 상태 변화 | 유스케이스, 활동, 상태 머신 |
 | 상호작용 다이어그램 | 참여자 사이의 상호작용 | 시퀀스, 커뮤니케이션, 상호작용 개요, 타이밍 |
+
+</div>
 
 정적·동적을 구분할 때는 **구성요소와 관계를 보는지, 실행 중의 행동과 변화를 보는지**를 먼저 확인하면 된다. [UML 다이어그램 분류](https://www.mongodb.com/resources/basics/unified-modeling-language)
 
@@ -127,6 +161,8 @@ DFD가 데이터의 흐름을 보여준다면, DD는 그 흐름에 등장하는 
 
 이 예시에서 회원 한 명은 주문을 0개 이상 가질 수 있고, 각 주문은 회원 한 명과 연결된다.
 
+<div class="post-table post-table--two" markdown="1">
+
 | 표기 | 의미 |
 |---|---|
 | `+` | public |
@@ -135,6 +171,8 @@ DFD가 데이터의 흐름을 보여준다면, DD는 그 흐름에 등장하는 
 | `~` | package |
 | `1` | 정확히 하나 |
 | `0..*` | 0개 이상 |
+
+</div>
 
 클래스에 연산이 포함되어 있어도, 클래스 다이어그램 자체는 실행 순서보다 **구조와 관계**를 보여주는 데 초점을 둔다. [클래스 다이어그램과 표기법](https://developer.ibm.com/articles/the-class-diagram/)
 
@@ -146,10 +184,16 @@ DFD가 데이터의 흐름을 보여준다면, DD는 그 흐름에 등장하는 
 
 [![주문하기에서 결제하기로 향하는 포함 관계와 쿠폰 적용에서 주문하기로 향하는 확장 관계]({{ '/assets/images/certification-study-01/use-case-diagram.svg' | relative_url }})]({{ '/assets/images/certification-study-01/use-case-diagram.svg' | relative_url }})
 
+<p class="post-table-hint">좌우로 밀어 표의 나머지 열을 볼 수 있습니다.</p>
+
+<div class="post-table post-table--three" role="region" tabindex="0" aria-label="유스케이스 다이어그램 표" markdown="1">
+
 | 관계 | 의미 | 화살표 방향 |
 |---|---|---|
 | 포함 `«include»` | 다른 유스케이스의 기능을 포함하여 사용한다. | 포함하는 기능 → 포함되는 기능 |
 | 확장 `«extend»` | 정해진 조건에서 기본 유스케이스에 행동을 추가한다. | 확장 기능 → 기본 기능 |
+
+</div>
 
 이 예시는 주문 과정에 결제를 포함하고, 쿠폰을 사용할 때 추가 행동이 발생하는 상황을 가정했다.
 
@@ -161,11 +205,15 @@ DFD가 데이터의 흐름을 보여준다면, DD는 그 흐름에 등장하는 
 
 [![사용자·주문 화면·주문 서비스·결제 서비스 사이의 요청과 응답 순서]({{ '/assets/images/certification-study-01/sequence-diagram.svg' | relative_url }})]({{ '/assets/images/certification-study-01/sequence-diagram.svg' | relative_url }})
 
+<div class="post-table post-table--two" markdown="1">
+
 | 구성요소 | 의미 |
 |---|---|
 | 참여자 | 상호작용에 참여하는 객체나 역할 |
 | 생명선 | 참여자를 나타내는 세로선 |
 | 메시지 | 참여자 사이에 전달되는 호출이나 응답 |
+
+</div>
 
 클래스 다이어그램이 구성과 관계를 보여준다면, 시퀀스 다이어그램은 **특정 상황에서 누가 누구에게 어떤 순서로 요청하는지**를 보여준다. [시퀀스 다이어그램 설명](https://www.ibm.com/docs/en/dma?topic=diagrams-sequence)
 
@@ -193,6 +241,10 @@ DFD가 데이터의 흐름을 보여준다면, DD는 그 흐름에 등장하는 
 
 이번 공부에서 가장 헷갈렸던 부분이다. 관계 이름과 함께 **선의 종류, 화살표 모양, 기호가 놓이는 위치**를 묶어서 정리했다.
 
+<p class="post-table-hint">좌우로 밀어 표의 나머지 열을 볼 수 있습니다.</p>
+
+<div class="post-table post-table--three" role="region" tabindex="0" aria-label="UML의 주요 관계 표" markdown="1">
+
 | 관계 | 의미 | 표기에서 확인할 점 |
 |---|---|---|
 | 연관 Association | 객체 사이에 연결이 있음을 표현한다. | 실선. 필요한 경우 탐색 방향을 표시한다. |
@@ -201,6 +253,8 @@ DFD가 데이터의 흐름을 보여준다면, DD는 그 흐름에 등장하는 
 | 일반화 Generalization | 하위 요소가 상위 요소를 구체화하는 관계다. | 실선과 **빈 삼각형**, 삼각형은 상위 쪽 |
 | 실체화 Realization | 명세나 계약을 구현하는 관계다. | 점선과 **빈 삼각형**, 삼각형은 명세 쪽 |
 | 의존 Dependency | 한 요소가 다른 요소를 사용하거나 그 변경의 영향을 받을 수 있다. | 점선 화살표, 사용하는 쪽 → 제공하는 쪽 |
+
+</div>
 
 [UML 관계의 의미](https://www.ibm.com/docs/en/dma?topic=diagrams-relationships-in-component), [집합·합성과 관계 표기](https://developer.ibm.com/articles/the-class-diagram/)
 
@@ -232,11 +286,17 @@ DFD가 데이터의 흐름을 보여준다면, DD는 그 흐름에 등장하는 
 
 분석 모델에서 사용하는 역할 표기의 예는 다음과 같다.
 
+<p class="post-table-hint">좌우로 밀어 표의 나머지 열을 볼 수 있습니다.</p>
+
+<div class="post-table post-table--three" role="region" tabindex="0" aria-label="UML 확장과 스테레오타입 표" markdown="1">
+
 | 표기 예 | 역할 | 예시 |
 |---|---|---|
 | `«boundary»` | 사용자나 외부 시스템과의 접점 | 주문 입력 화면 |
 | `«control»` | 처리 흐름과 협력을 조정 | 주문 처리 제어 객체 |
 | `«entity»` | 시스템이 관리하는 정보 표현 | 회원, 주문 정보 |
+
+</div>
 
 이들은 분석 모델에서 클래스 등의 역할을 구분하는 데 사용하는 예다. [Entity·Control·Boundary 설명](https://www.cs.sjsu.edu/faculty/pearce/modules/patterns/enterprise/ecb/ecb.htm)
 
@@ -250,12 +310,16 @@ DFD가 데이터의 흐름을 보여준다면, DD는 그 흐름에 등장하는 
 
 ### 애자일의 가치 이해하기
 
+<div class="post-table post-table--two" markdown="1">
+
 | 관점 | 핵심 내용 |
 |---|---|
 | 사람과 협업 | 도구와 절차를 활용하되, 사람 사이의 소통과 협업에 더 무게를 둔다. |
 | 동작하는 결과 | 문서를 작성하는 것과 함께 실제로 작동하는 소프트웨어를 중요하게 본다. |
 | 고객과의 협력 | 요구를 전달받는 데서 끝내지 않고, 고객과 지속적으로 확인하고 조율한다. |
 | 변화에 대한 대응 | 계획을 세우되, 새로운 정보와 요구가 생기면 조정한다. |
+
+</div>
 
 문서나 계획을 없앤다는 뜻으로 이해하면 안 된다. 무엇에 더 높은 가치를 두고 판단하는지에 관한 관점이다. [애자일 소프트웨어 개발 선언](https://agilemanifesto.org/iso/ko/manifesto.html)
 
@@ -283,12 +347,16 @@ DFD가 데이터의 흐름을 보여준다면, DD는 그 흐름에 등장하는 
 
 UML에서는 관계의 의미와 함께 표기까지 정확히 읽는 연습이 필요하다고 느꼈다.
 
+<div class="post-table post-table--two" markdown="1">
+
 | 헷갈린 부분 | 다시 확인할 기준 |
 |---|---|
 | 집합과 합성 | 빈 마름모인지 채운 마름모인지, 부분의 생명주기를 어떻게 모델링했는지 확인 |
 | 일반화와 실체화 | 실선인지 점선인지, 삼각형이 어디를 향하는지 확인 |
 | 의존 관계 | 사용하는 쪽과 제공하는 쪽을 구분 |
 | 포함과 확장 | 기본 기능과 추가 기능을 구분하고 화살표 방향 확인 |
+
+</div>
 
 관계 이름만 읽고 넘어가기보다, 간단한 예시를 직접 그려보면서 확인해야 할 부분이다.
 

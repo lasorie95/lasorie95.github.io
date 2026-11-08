@@ -65,8 +65,51 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .btn--primary:hover { background: #3f5236; }
 .toc { background: #faf5e7; border: 1px solid #bfc3a6; border-radius: 0; }
 .toc .nav__title { background: #617755; font-family: $sans-serif; }
-.page__content table { background: #faf5e7; }
-.page__content th { background: #e6dfc8; }
+.page__content table {
+  display: table;
+  width: 100%;
+  margin: 1.25em 0;
+  table-layout: fixed;
+  border-collapse: collapse;
+  background: #faf5e7;
+  color: #373a2c;
+  font-size: 1em;
+  line-height: 1.75;
+}
+.page__content table th, .page__content table td {
+  padding: .75em .85em;
+  border: 1px solid #c9c5a9;
+  text-align: left;
+  vertical-align: top;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.page__content table th {
+  background: #d9e2c3;
+  border-bottom: 2px solid #8b927f;
+  color: #2f3d29;
+  font-weight: 650;
+}
+.page__content table tbody tr:nth-child(even) td { background: #f0ead8; }
+.page__content table code {
+  font-size: .92em;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.post-table {
+  max-width: 100%;
+  margin: 1.25em 0;
+  overflow-x: auto;
+  scrollbar-color: #8b927f #ece3cc;
+  -webkit-overflow-scrolling: touch;
+}
+.post-table:focus-visible { outline: 3px solid #975c2d; outline-offset: 3px; }
+.page__content .post-table table { margin: 0; }
+.post-table--two th:first-child { width: 28%; }
+.post-table--three table { min-width: 34rem; }
+.post-table--three th:first-child { width: 26%; }
+.post-table-hint { display: none; }
 .page__content pre, .page__content code { font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
 .page__content pre { font-size: .8rem; }
 .archive__item-title { line-height: 1.6; }
@@ -155,6 +198,14 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .world-section__heading { align-items: center; }
 }
 @media (max-width: 640px) {
+  .post-table--two th:first-child { width: 34%; }
+  .page__content .post-table-hint {
+    display: block;
+    margin: 1em 0 -.5em;
+    color: #5a6047;
+    font-size: .8em;
+    line-height: 1.5;
+  }
   .masthead__inner-wrap { margin-right: 1rem; margin-left: 1rem; }
   .greedy-nav .site-title { font-size: .82rem; margin-right: .5rem; }
   .world-projects { grid-template-columns: minmax(0, 1fr); }
