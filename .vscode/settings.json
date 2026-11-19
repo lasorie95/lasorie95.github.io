@@ -1,0 +1,26 @@
+{
+  "files.encoding": "utf8",
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.tabCompletion": "on",
+    "files.trimTrailingWhitespace": false
+  },
+  "files.exclude": {
+    "**/_site": true,
+    "**/vendor": true,
+    "**/.jekyll-cache": true,
+    "**/.sass-cache": true
+  },
+  "files.watcherExclude": {
+    "**/_site/**": true,
+    "**/vendor/**": true,
+    "**/.jekyll-cache/**": true,
+    "**/.sass-cache/**": true
+  },
+  "search.exclude": {
+    "**/_site": true,
+    "**/vendor": true,
+    "**/.jekyll-cache": true,
+    "**/.sass-cache": true
+  }
+}
